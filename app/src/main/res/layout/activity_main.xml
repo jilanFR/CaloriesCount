@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/clRoot"
+    android:saveEnabled="false"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:layout_margin="16dp">
+
+    <TextView
+        android:id="@+id/tvPrompt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="#000000"
+        android:text="Daily calories:"
+        android:padding="8dp"
+        android:textColor="#FFD851EF"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- the parts that shows from the rv!-->
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvMessages"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/fabMain"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvPrompt"
+        app:layout_constraintVertical_bias="1.0"
+        tools:itemCount="5"
+        tools:listitem="@layout/card_view_design" />
+
+    <LinearLayout
+        android:id="@+id/fabMain"
+        android:layout_width="match_parent"
+        android:layout_height="10mm"
+        android:layout_margin="15dp"
+        android:layout_marginBottom="14dp"
+        android:gravity="right"
+        app:layout_constraintBottom_toTopOf="@+id/llBottom"
+        app:layout_constraintTop_toBottomOf="@+id/rvMessages"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_undo"
+            android:layout_gravity="bottom|end"
+            android:id="@+id/fab_btn"
+            android:padding="4dp"
+            android:layout_margin="10dp"
+            android:backgroundTint="#D851EF">
+        </com.google.android.material.floatingactionbutton.FloatingActionButton>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llBottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="7dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <EditText
+            android:id="@+id/intake"
+            android:layout_width="289dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Amount..."
+            android:inputType="number"
+            android:backgroundTint="#D851EF"
+            android:minHeight="48dp"
+            android:singleLine="true" />
+
+
+        <Button
+            android:id="@+id/btnI"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:backgroundTint="#D851EF"
+            android:padding="2dp"
+            android:text="INTAKE"
+            android:textColor="@color/black" />
+
+        <EditText
+            android:id="@+id/burn"
+            android:layout_width="289dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Amount..."
+            android:backgroundTint="#D851EF"
+            android:inputType="number"
+            android:minHeight="48dp"
+            android:singleLine="true" />
+
+        <Button
+            android:id="@+id/btnB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:backgroundTint="#FFD851EF"
+            android:padding="2dp"
+            android:text="BURNED"
+            android:textColor="#000000" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
